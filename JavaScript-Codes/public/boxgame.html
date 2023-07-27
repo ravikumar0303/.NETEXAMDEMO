@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            background-color: red;
+            width:fit-content;
+            height:200;
+            border: 2px solid black;
+            padding: 30px;
+            position: fixed;
+           
+        }
+        #box2{
+            background-color: blue;
+            width:fit-content;
+            height:200;
+            border: 2px solid brown;
+            padding: 30px;
+            position: fixed;
+        }
+    </style>
+    <script>
+        var x=0;
+        var y=0;
+        var s= 0;
+        var t =0 ;
+        f1 = ()=>{
+            x = Math.random()*900;
+            y = Math.random()*500;
+            document.getElementById('box1').style.marginLeft = `${x}px`
+            document.getElementById('box1').style.marginTop = `${y}px`
+        }
+        f2 = ()=>{
+            s = Math.random()*900;
+            t = Math.random()*500;
+            document.getElementById('box2').style.marginLeft = `${s}px`
+            document.getElementById('box2').style.marginTop = `${t}px`
+        }
+        win = ()=>{
+            alert("You win")
+        }
+    </script>
+</head>
+<body>
+    <h1>Click on text inside <a onclick="win()">boxes</a> to win</h1>
+    <div id="box1" onpointermove="f1()"><a onclick="win()">Box 1</a></div>
+    <div id="box2" onpointermove="f2()"><a onclick="win()">Box 2</a></div>
+</body>
+</html>

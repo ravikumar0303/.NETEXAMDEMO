@@ -1,0 +1,29 @@
+html{
+    background-color: beige;
+}
+.info{
+    width:80%;
+    height:100px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.infobase{
+    float: left;
+    height:fit-content;
+}
+.photo{
+    float: right;
+    height:fit-content;
+}
+.degree{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.hobbies{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.about{
+    margin-left: 50px;
+    margin-right: 50px;
+}

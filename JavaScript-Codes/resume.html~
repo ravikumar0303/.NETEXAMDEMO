@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Resume</title>
+	</head>
+	<body>
+		<div align='center'><h1>Resume</h1></div>
+		<hr/>
+		<div align='center'>
+			<table>
+				<thead>
+					
+				</thead>
+				<tbody>
+					<tr><td>Name</td><td>Jeremy</td></tr>
+					<tr><td>Date of Birth</td><td>25/02/1996</td></tr>
+					<tr><td>Email</td><td>gojerjeremy@gmail.com</td></tr>
+					<tr><td>Phone</td><td>7019294131</td></tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,9 @@
+.people{
+    margin:auto;
+    width:50%;
+}
+#crowd{
+    margin:auto;
+    width:75%;
+    overflow-y: 200px;
+}

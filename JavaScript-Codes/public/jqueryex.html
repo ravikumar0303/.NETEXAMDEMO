@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY EXAMPLES</title>
+    <style>
+        #d4{
+            
+            width:fit-content;
+            background-color: aqua;
+            font-style: italic;
+            border: 2px solid black;
+            padding: 3px;
+            position: absolute;
+            
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script>
+        $().ready(()=>{
+            $('#btn1').click(()=>{
+                $('#p11').text("Hello");
+                $('#p12').html("<i>Hello</i>");
+                $('#p13').html("<u>Hello</u>");
+            })
+            $('#ip2').on('input',()=>{
+                let fact = 1;
+                for(let i=1;i<=$('#ip2').val();i++){
+                    fact = fact*i;
+                }
+                $('#p21').html(`<h2>${fact}</h2>`) 
+            })
+            $('#btn3').click(()=>{
+                let min = $('#ip31').val();
+                let max = $('#ip32').val();
+                let v = $('#ip33').val();
+                
+                $('#op3').html(`<table border=1>`);
+                    
+                    for(let i=min;i<=max;i++){
+                        
+                        $('#op3').append(`<tr><td> ${v} * ${i} </td><td> = ${v*i} </td></tr>`);
+                    }
+                $('#op3').append(`</table>`);
+
+            })
+            jump = ()=>{
+                if($('#d4').css('right') == '0px')
+                    $('#d4').animate({left:'0',right:'83.5vw',height:'20%'},1000);
+                if($('#d4').css('left') == '0px')
+                    $('#d4').animate({right:'0',left:'83.5vw',height:'5%'},1000);  
+            }
+            $('#d4').animate({right:'0'})
+            //$('#d4').hover(jump)
+            setInterval(jump,1000)
+            
+            
+        })
+    </script>
+</head>
+<body>
+    <div id="ex1">
+        <p>Example 1</p>
+        <context title="A button"><button id="btn1">Click</button></context>
+        <p id="p11"></p>
+        <p id="p12"></p>
+        <p id="p13"></p>
+    </div>
+    <div id="ex2">
+        <p>Example 2</p>
+        <input type="number" id="ip2"/>
+        <p id="p21"></p>
+    </div>
+    <div id="ex3">
+        <p>Example 3</p>
+        Table for : <input type="number" id="ip33"/><br/>
+        Min :<input type="number" id="ip31"/><br/>
+        Max : <input type="number" id="ip32"/><br/>
+        
+        <button id="btn3">Show table</button>
+        <div id="op3"></div>
+    </div>
+    <div id="ex4">
+        <p>Example 4</p>
+        <div id="d4">
+            <a onclick="alert('You win')">Nice quote in a nice font</a>
+        </div>
+    </div>
+</body>
+</html>

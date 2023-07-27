@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\hello.css">
+    <script src="./scripts/countdown.js"></script>
+    <script>
+        
+        f1=()=>{
+            document.getElementById('time').innerHTML = new Date();
+        }
+        setInterval(f1,1000)
+    </script>
+    <title>Document</title>
+    
+</head>
+<body>
+    <p id="time"></p>
+    <div class="hello">
+        <marquee><h1>🐈 Join the gang now 🐈</h1></marquee>
+    </div>
+    <div class="countdown" id="countdown"></div>
+    <div>
+        <ol>
+            <li><h2> Enroll in our <a href="/form">Registration Form</a><h2></li>
+            <li><h2> Check out our games <a href="/games">here</a><h2></h2></li>
+            <li><h2> Check out our <a href="/number">Number Operations</a><h2></h2></li>
+            
+        </ol>
+    </div>
+    <div>
+        
+    </div>
+</body>
+</html>

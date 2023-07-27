@@ -1,0 +1,45 @@
+
+    <link rel="stylesheet" href="css/dates.css">
+    <script>
+        var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+        //var age = 0;
+        var showDayinWords=()=>{
+            let d1 = (new Date(document.getElementById('d1').value)).getDay()
+            document.getElementById('op1').innerHTML=`<h1>${days[d1]}</h1>`            
+        }
+        var showAge=()=>{
+            let d1 = (new Date(document.getElementById('d2').value))
+            let d2 = new Date(`${new Date().getFullYear()}-${d1.getMonth()+1}-${d1.getDate()}`)
+            age = (new Date()).getFullYear() - d1.getFullYear()
+            
+            if((new Date())-d2 < 0){
+                age = age-1
+            }
+            document.getElementById('op2').innerHTML=`<h1>${age} years old </h1>`
+        }
+        var showDayThisYear=()=>{
+            let d1 = (new Date(document.getElementById('d3').value))
+            let d2 = new Date(`${new Date().getFullYear()}-${d1.getMonth()+1}-${d1.getDate()}`)
+            document.getElementById('op3').innerHTML=`<h1>${days[d2.getDay()]}</h1>`
+        }   
+    </script>
+
+<body>
+    <div>
+        <div>
+            <h1><strong>1. Show day on date in words</strong>
+            <input type="date" id="d1" name="d1" onchange="showDayinWords()"/></h1>
+            <p id="op1"></p>
+        </div>
+        <div>
+            <h1><strong>2. Show age from given date</strong>
+            <input type="date" id="d2" name="d2" onchange="showAge()"/></h1>
+            <p id="op2"></p>
+        </div>
+        <div>
+            <h1><strong>3. Show day of your birthday this year in words</strong>
+            <input type="date" id="d3" name="d3" onchange="showDayThisYear()"/></h1>
+            <p id="op3"></p>
+        </div>
+    </div>
+</body>

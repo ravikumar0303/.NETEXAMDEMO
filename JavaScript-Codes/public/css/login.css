@@ -1,0 +1,6 @@
+body{
+    background-color: red;
+    background-image: url('/images/swastika.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+}

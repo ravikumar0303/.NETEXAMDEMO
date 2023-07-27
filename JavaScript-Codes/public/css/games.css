@@ -1,0 +1,16 @@
+*{
+    cursor: crosshair;
+}
+html{
+    background-image: url('https://wallpaperaccess.com/full/1388128.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+.main ,a{
+    margin: 10px;
+    color: greenyellow;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: bolder;
+}

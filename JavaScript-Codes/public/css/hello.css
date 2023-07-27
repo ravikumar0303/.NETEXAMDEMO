@@ -1,0 +1,14 @@
+html{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShKmfBeAC-9S1HTWT9VaT1CTDJlZSui3g48Q&usqp=CAU');
+    background-size: stretch;
+    height: 100%;
+}
+.hello{
+
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+h1{
+    font-family: sans-serif;
+    font-size: 4rem;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 May 2023</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <style>
+        #outer{
+            background-color: aqua;
+            width:400px;
+            height:400px;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: row;
+            border-radius: 50%;
+        }
+        #inner{
+            margin:auto;
+            background-color: yellow;
+            width:350px;
+            height:350px;
+            border: 2px solid black ;
+            display: flex;
+            flex-direction: row;
+            border-radius: 50%;
+            
+        }
+        #box1{
+            margin:auto;
+            width:350px;
+            height:350px;
+            border-radius: 50%;
+            animation: rotation 0.5s infinite linear;
+        }
+        p{
+            margin: auto;
+        }
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(359deg);
+            }
+        }
+    </style>
+    <script>
+        $().ready(()=>{
+            let d = new Date() 
+            //manipulating inner element using outer element
+            $('#outer').children().each((x,elem)=>{console.log(elem);$(elem).css({backgroundColor:'green'})})  
+            //manipulating outer elemnt using inner element
+            $('#inner').parent().css({borderColor:'red'})
+            document.getElementById('date2').innerHTML = `<input type="date" id="doj" name="doj" min="2000-01-01" max="${d.toISOString().split('T')[0]}">`;
+            
+            
+        })
+        rot = ()=>{
+                if($('#d4').css('right') == '0px')
+                    $('#d4').animate({},1000);
+                if($('#d4').css('left') == '0px')
+                    $('#d4').animate({right:'0',left:'83.5vw',height:'5%'},1000);  
+            }
+            $('#d4').animate({right:'0'})
+            //$('#d4').hover(jump)
+            setInterval(rot,1000)
+
+        validate = ()=>{
+            let status = true;
+
+            let name = document.forms.login.fname.value
+            let dob = document.forms.login.fdate.value
+            let email = document.forms.login.femail.value
+            let address = document.forms.login.faddress.value
+            let msg = ""
+            
+            if(name.length<2 || !isNaN(name) || name.trim()==''){
+                status = status && false
+                msg += `<h2>there is a issue with name</h2>`
+            }
+            if((new Date()).getFullYear-dob.getFullYear<18 || dob.trim()==''){
+                
+                status = status && false
+                msg += `<h2>age is less than 18</h2>`
+            }
+            if(!/@/.test(email) || !/\./.test(email) || email.trim()==''){
+                status = status && false
+                msg += `<h2>This is not a email</h2>`
+            }
+            if(!/pune/.test(address)){
+                status = status && false
+                msg += `<h2>there is a issue with address</h2>`
+            }
+            document.getElementById('errmsg').innerHTML = msg;
+
+            return  status;
+        }
+        validate2 = ()=>{
+            let status = true
+            let doj = document.getElementById('doj')
+            let desc = document.getElementById('desc')
+            let msg = ""
+            if(!doj.checkValidity()){
+                msg += doj.validationMessage
+                status = status && false
+            }
+            if(!desc.checkValidity()){
+                msg += desc.validationMessage
+                status = status && false
+            }
+            console.log(msg)
+            document.getElementById('errmsg2').innerHTML = msg;
+           
+        }
+       
+        
+    </script>
+</head>
+<body>
+    <div class="ex1">
+        <div id="outer">
+            <div id="inner">
+                <img id="box1" src="./images/airplaneengine.jpg" >
+            </div>
+        </div>
+    </div>
+    <div class="ex2">
+        <form name="login"  onsubmit="return validate()" action="login.html">
+            Name : <input type="text" name="fname"/>
+            DOB : <input type="date" name="fdate"/>
+            Email : <input type="text" name="femail"/>
+            Address : <input type="text" name="faddress"/>
+            <input type="submit" value="submit">
+        </form>
+        <p id="errmsg"></p>
+        
+    </div>
+    <div class="ex3">
+        <form name="login2"  onsubmit="return validate2()" action="login.html">
+            DOJ : <span id="date2"></span>
+            Desc : <input type="text" minlength="2" maxlength="20" id="desc" required/>
+            <input type="submit" value="submit" onclick="validate2()">
+        </form>
+        <p id="errmsg2"></p>
+    </div>
+    <div>
+        
+    </div>
+</body>
+</html>

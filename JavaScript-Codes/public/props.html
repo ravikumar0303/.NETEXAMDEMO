@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        f1=(p)=>{
+            let res = ""
+            if(p==null){
+                p = document.getElementById('textbox')
+            }
+            for(x in p){
+                res += `<h3>${x} : ${p[x]}</h3>`
+            }
+            document.getElementById('op').innerHTML = `${res}`
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="textbox"/>
+        <button onclick="f1(null)">Show</button>
+    </div>
+    <div id="op"></div>
+</body>
+</html>

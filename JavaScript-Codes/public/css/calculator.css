@@ -1,0 +1,7 @@
+body{
+    background-image: linear-gradient(blue,white);
+}
+.calculator{
+    color:whitesmoke;
+    font-size: 2rem;
+}
